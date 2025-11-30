@@ -49,7 +49,11 @@ export class UI {
       ctx.fillStyle = '#33FF33';
       ctx.shadowBlur = 10;
       ctx.shadowColor = '#33FF33';
-      ctx.fillText('PRESS SPACE', this.canvas.width / 2, 280);
+      
+      // Show different instruction based on device
+      const isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const startText = isMobile ? 'TAP TO START' : 'PRESS SPACE';
+      ctx.fillText(startText, this.canvas.width / 2, 280);
       ctx.shadowBlur = 0;
     }
 

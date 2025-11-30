@@ -156,6 +156,14 @@ class BreakoutGame {
     // Launch ball on click/touch
     this.canvas.addEventListener('click', () => {
       console.log('🖱️ Canvas clicked! Game state:', this.state, 'Balls count:', this.balls.length);
+      
+      // START SCREEN: Click to start game (mobile support)
+      if (this.state === GAME_STATES.START) {
+        this.startGame();
+        return;
+      }
+      
+      // PLAYING: Click to launch ball
       if (this.state === GAME_STATES.PLAYING) {
         console.log('Launching balls...');
         this.balls.forEach((ball, i) => {
@@ -168,6 +176,17 @@ class BreakoutGame {
         console.log('After launch - balls count:', this.balls.length);
       }
     });
+    
+    // Touch support for start screen
+    this.canvas.addEventListener('touchstart', (e) => {
+      console.log('👆 Touch detected! Game state:', this.state);
+      
+      // START SCREEN: Touch to start game
+      if (this.state === GAME_STATES.START) {
+        e.preventDefault();
+        this.startGame();
+      }
+    }, { passive: false });
   }
 
   handleSpacePress() {
