@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- META: SEO and mobile optimization -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Vintage Breakout - A classic arcade game with authentic 1976 Atari styling">
+  <meta name="keywords" content="breakout, arcade, retro game, classic game">
+  <meta name="theme-color" content="#000000">
+  
+  <!-- FAVICON: Browser tab icon -->
+  <link rel="icon" type="image/jpeg" href="/logoIcon.jpg">
+  
+  <title>Brick Breaker</title>
+  
+  <!-- FONTS: Retro pixel font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- STYLES: CRT effects and responsive design -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="game-container">
+    <!-- CANVAS: Main game rendering surface (480x360) -->
+    <canvas id="breakoutCanvas" width="480" height="360"></canvas>
+    
+    <!-- MOBILE: Touch controls for mobile devices -->
+    <div id="mobile-controls" class="mobile-only">
+      <button id="mobile-pause" class="mobile-btn">⏸ PAUSE</button>
+    </div>
+  </div>
+  
+  <!-- GAME: Main game logic and initialization -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
